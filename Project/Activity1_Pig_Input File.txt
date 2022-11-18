@@ -1,0 +1,6 @@
+
+inputFile = LOAD 'hdfs:///Renuga/episodeIV_dialouges.txt' using PigStorage('\t') AS (name: chararray, line: chararray);
+grpd = GROUP inputFile BY name;
+namesstore = FOREACH grpd GENERATE $0,COUNT($1) AS no_of_lines;
+ordernames = ORDER namesstore BY no_of_lines DESC;
+STORE ordernames INTO 'hdfs:///user/Renuga/results';
