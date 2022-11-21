@@ -1,0 +1,54 @@
+hive> create database office;
+OK
+Time taken: 0.427 seconds
+hive> use office;
+OK
+Time taken: 0.066 seconds
+hive> CREATE TABLE employee
+    > (id INT, name STRING, dept STRING, yoj INT, salary INT)
+    > ROW FORMAT DELIMITED FIELDS TERMINATED BY ','
+    > TBLPROPERTIES ("skip.header.line.count"="1");
+OK
+Time taken: 0.784 seconds
+hive> DESCRIBE employee;
+OK
+id                      int
+name                    string
+dept                    string
+yoj                     int
+salary                  int
+Time taken: 0.403 seconds, Fetched: 5 row(s)
+hive> LOAD DATA LOCAL INPATH
+    > '/EmpData.csv'
+    > INTO TABLE employee;
+Loading data to table office.employee
+OK
+Time taken: 1.39 seconds
+
+hive> SELECT * FROM employee;
+OK
+1       Ian     Quality Assurance       2021    28113
+2       Beatrice        Tech Support    2021    35330
+3       Vladimir        Human Resources 2020    51445
+4       Whitney IT      2020    23818
+5       Leslie  Customer Service        2021    59882
+6       Bernard IT      2021    50330
+7       Mary    Customer Service        2021    26558
+8       Jerome  RnD     2021    45333
+9       Joshua  IT      2021    59538
+10      Keane   Human Resources 2022    46500
+11      Velma   Human Resources 2022    19816
+12      Rogan   Tech Support    2022    27554
+13      Aurelia RnD     2021    20762
+14      Merrill Quality Assurance       2021    59660
+15      Blaine  Tech Support    2022    28768
+Time taken: 4.668 seconds, Fetched: 15 row(s)
+
+hive> SELECT COUNT(*) FROM employee;
+MapReduce Jobs Launched:
+Stage-Stage-1: Map: 1  Reduce: 1   Cumulative CPU: 27.19 sec   HDFS Read: 13138 HDFS Write: 102 SUCCESS
+Total MapReduce CPU Time Spent: 27 seconds 190 msec
+OK
+15
+Time taken: 93.837 seconds, Fetched: 1 row(s)
+-------------------------------------------------------------
