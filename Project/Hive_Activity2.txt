@@ -1,0 +1,77 @@
+hive> SELECT COUNT(*) FROM episodefour WHERE INSTR(line, 'Luke')>0;
+Query ID = root_20221118152538_401cd06f-ba36-4085-b1f7-46d701dc3bca
+Total jobs = 1
+Launching Job 1 out of 1
+Number of reduce tasks determined at compile time: 1
+In order to change the average load for a reducer (in bytes):
+  set hive.exec.reducers.bytes.per.reducer=<number>
+In order to limit the maximum number of reducers:
+  set hive.exec.reducers.max=<number>
+In order to set a constant number of reducers:
+  set mapreduce.job.reduces=<number>
+Starting Job = job_1668771140129_0014, Tracking URL = http://a3fbe39c889f:8088/proxy/application_1668771140129_0014/
+Kill Command = /usr/local/hadoop/bin/mapred job  -kill job_1668771140129_0014
+Hadoop job information for Stage-1: number of mappers: 1; number of reducers: 1
+2022-11-18 15:25:45,902 Stage-1 map = 0%,  reduce = 0%
+2022-11-18 15:25:52,159 Stage-1 map = 100%,  reduce = 0%, Cumulative CPU 4.5 sec
+2022-11-18 15:25:57,359 Stage-1 map = 100%,  reduce = 100%, Cumulative CPU 7.69 sec
+MapReduce Total cumulative CPU time: 7 seconds 690 msec
+Ended Job = job_1668771140129_0014
+MapReduce Jobs Launched:
+Stage-Stage-1: Map: 1  Reduce: 1   Cumulative CPU: 7.69 sec   HDFS Read: 81923 HDFS Write: 102 SUCCESS
+Total MapReduce CPU Time Spent: 7 seconds 690 msec
+OK
+56
+Time taken: 19.873 seconds, Fetched: 1 row(s)
+hive>hive> INSERT OVERWRITE DIRECTORY '/Renuga/outputhive'
+    > SELECT COUNT(*) FROM episodefour where INSTR(line, 'Luke')>0;
+Query ID = root_20221118153004_bb6b6cad-e243-438d-becf-1389f154768a
+Total jobs = 1
+Launching Job 1 out of 1
+Number of reduce tasks determined at compile time: 1
+In order to change the average load for a reducer (in bytes):
+  set hive.exec.reducers.bytes.per.reducer=<number>
+In order to limit the maximum number of reducers:
+  set hive.exec.reducers.max=<number>
+In order to set a constant number of reducers:
+  set mapreduce.job.reduces=<number>
+Starting Job = job_1668771140129_0015, Tracking URL = http://a3fbe39c889f:8088/proxy/application_1668771140129_0015/
+Kill Command = /usr/local/hadoop/bin/mapred job  -kill job_1668771140129_0015
+Hadoop job information for Stage-1: number of mappers: 1; number of reducers: 1
+2022-11-18 15:30:12,136 Stage-1 map = 0%,  reduce = 0%
+2022-11-18 15:30:18,369 Stage-1 map = 100%,  reduce = 0%, Cumulative CPU 4.01 sec
+2022-11-18 15:30:23,597 Stage-1 map = 100%,  reduce = 100%, Cumulative CPU 7.1 sec
+MapReduce Total cumulative CPU time: 7 seconds 100 msec
+Ended Job = job_1668771140129_0015
+Moving data to directory /Renuga/outputhive
+MapReduce Jobs Launched:
+Stage-Stage-1: Map: 1  Reduce: 1   Cumulative CPU: 7.1 sec   HDFS Read: 81486 HDFS Write: 3 SUCCESS
+Total MapReduce CPU Time Spent: 7 seconds 100 msec
+OK
+Time taken: 20.057 seconds
+hive>hive> SELECT COUNT(*) FROM episodefour WHERE INSTR(line, 'Luke')>0;
+Query ID = root_20221118153141_b73da75e-7953-4e09-b233-f4247e522d00
+Total jobs = 1
+Launching Job 1 out of 1
+Number of reduce tasks determined at compile time: 1
+In order to change the average load for a reducer (in bytes):
+  set hive.exec.reducers.bytes.per.reducer=<number>
+In order to limit the maximum number of reducers:
+  set hive.exec.reducers.max=<number>
+In order to set a constant number of reducers:
+  set mapreduce.job.reduces=<number>
+Starting Job = job_1668771140129_0016, Tracking URL = http://a3fbe39c889f:8088/proxy/application_1668771140129_0016/
+Kill Command = /usr/local/hadoop/bin/mapred job  -kill job_1668771140129_0016
+Hadoop job information for Stage-1: number of mappers: 1; number of reducers: 1
+2022-11-18 15:31:51,028 Stage-1 map = 0%,  reduce = 0%
+2022-11-18 15:31:57,243 Stage-1 map = 100%,  reduce = 0%, Cumulative CPU 4.96 sec
+2022-11-18 15:32:03,485 Stage-1 map = 100%,  reduce = 100%, Cumulative CPU 8.52 sec
+MapReduce Total cumulative CPU time: 8 seconds 520 msec
+Ended Job = job_1668771140129_0016
+MapReduce Jobs Launched:
+Stage-Stage-1: Map: 1  Reduce: 1   Cumulative CPU: 8.52 sec   HDFS Read: 81935 HDFS Write: 102 SUCCESS
+Total MapReduce CPU Time Spent: 8 seconds 520 msec
+OK
+56
+Time taken: 23.976 seconds, Fetched: 1 row(s)
+hive>
